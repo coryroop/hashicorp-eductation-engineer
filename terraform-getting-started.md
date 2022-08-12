@@ -365,6 +365,6 @@ Look for a message at the bottom of the output asking for confirmation. Type `ye
 
 ## Next Steps
 
-- Learn to use Input Variables to make your code more portable
-- Use Outputs to query data
-- Store the Terraform state remotely
+- [Learn to use Input Variables to make your code more portable](https://www.terraform.io/language/values/variables)
+- [Use Outputs to expose data for other configurations](https://www.terraform.io/language/values/outputs)
+- [Store the Terraform state remotely](https://www.terraform.io/language/state/remote)
