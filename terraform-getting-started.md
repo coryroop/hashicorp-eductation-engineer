@@ -2,15 +2,18 @@
 
 Terraform is the most popular langauge for defining and provisioning infrastructure as code (IaC). In this guide you'll learn to install Terraform and use it to deploy a Docker container.
 
+
 ## Prerequisites
 
 - [Docker installed and running](https://docs.docker.com/desktop/install/linux-install/)
 
+
 ## Install Terraform
 
-To install Terraform, visit [Terraform.io](https://www.terraform.io/downloads) and download the installer for your platform.
+To install Terraform, visit [Terraform.io](https://www.terraform.io/downloads) and download the installer for your platform or follow the Package Manager installation instructions.
 
-With Terraform installed, you're ready to create some infrastructure.
+Once Terraform is installed, you're ready to create some infrastructure.
+
 
 ## Create a Directory
 
@@ -21,6 +24,7 @@ Most users find it easiest to create a new directory on their local machine for 
 [ec2-user@ip-172-31-84-22 ~]$ mkdir terraform-demo
 [ec2-user@ip-172-31-84-22 ~]$ cd terraform-demo/
 ```
+
 
 ## Create a Terraform configuration file and add some code
 Next, create a file for your Terraform configuration code.
@@ -56,6 +60,8 @@ resource "docker_image" "nginx" {
 }
 ```
 
+
+## Initialize Terraform
 Initialize Terraform with the `init` command. The Docker provider will be installed. 
 
 ### CLI Command
@@ -94,6 +100,8 @@ rerun this command to reinitialize your working directory. If you forget, other
 commands will detect it and remind you to do so if necessary.
 ```
 
+
+## Apply the changes
 You shoud check for any errors. If it ran successfully, provision the resource with the `apply` command.
 
 ### CLI Command
@@ -218,6 +226,8 @@ Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
 
 The command will take up to a few minutes to run and will display a message indicating that the resource was created.
 
+
+## Destroy what you created
 Finally, destroy the infrastructure with the `destroy` command.
 
 ### CLI Command
@@ -351,3 +361,10 @@ Destroy complete! Resources: 2 destroyed.
 ```
 
 Look for a message at the bottom of the output asking for confirmation. Type `yes` and hit ENTER. Terraform will destroy the resources it had created earlier.
+
+
+## Next Steps
+
+- Learn to use Input Variables to make your code more portable
+- Use Outputs to query data
+- Store the Terraform state remotely
